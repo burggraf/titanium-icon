@@ -27,7 +27,7 @@ var fontMaps = {};
 function initializeFont(fontname) {
 	if (typeof fontMaps[fontname] == "undefined") fontMaps[fontname] = {};
 	try {
-		var obj = JSON.parse(Titanium.Filesystem.getFile('icomoon.json').read().text);
+		var obj = JSON.parse(Titanium.Filesystem.getFile(fontname + '.json').read().text);
 		var fontmap = obj.icons;
 		for (var i = 0; i < fontmap.length; i++) {
 			var font = fontmap[i].properties.name;
